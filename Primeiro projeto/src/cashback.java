@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class cashback {
+    public static void main(String[] args) {
+
+        Scanner leitor = new Scanner(System.in);
+        double cashback;
+
+        System.out.println("Digite seu nome: ");
+        String nome = leitor.nextLine();
+
+        System.out.println("Digite a sua idade: ");
+        int idade = leitor.nextInt();
+
+        System.out.println("Digite o valor da compra: ");
+        double valorDaCompra = leitor.nextDouble();
+
+        if (idade >= 21 && valorDaCompra < 1000) {
+            cashback = 0.05;
+        } else if (idade < 21 && valorDaCompra < 1000) {
+            cashback = 0.07;
+        } else if (idade >= 21 && valorDaCompra >= 1000) {
+            cashback = 0.07;
+        } else {
+            cashback = 0.1;
+        }
+        double valorCashback = valorDaCompra * cashback;
+        System.out.printf("Olá" + nome + "parabéns! Seu cashback foi aprovado no valor de R$ %.2f%n" + valorCashback);
+    }
+}
